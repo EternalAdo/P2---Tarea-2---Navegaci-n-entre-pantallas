@@ -17,3 +17,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^14.8.1
+
+

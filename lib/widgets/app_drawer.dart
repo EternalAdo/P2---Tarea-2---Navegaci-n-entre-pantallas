@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../theme/app_colors.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -8,44 +9,57 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: AppColors.background,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Color(0xFF176B5B),
+              color: AppColors.primary,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
+            child: Row(
               children: [
                 Icon(
                   Icons.landscape,
                   size: 48,
                   color: Colors.white,
                 ),
-                SizedBox(height: 8),
-                Text(
-                  'Canarias Aventura',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
+                SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'Canarias Aventura',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Inicio'),
+            leading: const Icon(
+              Icons.home,
+              color: AppColors.primary,
+            ),
+            title: const Text(
+              'Inicio',
+              style: TextStyle(color: AppColors.text),
+            ),
             onTap: () {
               context.go('/');
             },
           ),
           ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text('Mi portfolio'),
+            leading: const Icon(
+              Icons.person,
+              color: AppColors.primary,
+            ),
+            title: const Text(
+              'Mi portfolio',
+              style: TextStyle(color: AppColors.text),
+            ),
             onTap: () {
               context.go('/portfolio');
             },
